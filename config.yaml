@@ -1,0 +1,106 @@
+# A-Scope Research 金融智能体团队配置文件
+# 请根据您的需求修改以下配置
+
+# 智能体配置
+agents:
+  # 技术分析师
+  technical_analyst:
+    name: "李技术"  # 智能体名称
+    model: "your-model-name"  # 模型名称
+    api_key: "your-api-key"  # API密钥
+    base_url: "your-base-url"  # API基础URL
+    temperature: 0.7  # 创造性参数 (0-1)
+    max_tokens: 2000  # 最大输出长度
+    
+  # 基本面分析师
+  fundamental_analyst:
+    name: "王基本"
+    model: "your-model-name"
+    api_key: "your-api-key"
+    base_url: "your-base-url"
+    temperature: 0.7
+    max_tokens: 2000
+    
+  # 量化分析师
+  quantitative_analyst:
+    name: "张量化"
+    model: "your-model-name"
+    api_key: "your-api-key"
+    base_url: "your-base-url"
+    temperature: 0.3  # 较低的创造性，更注重数据
+    max_tokens: 2000
+    
+  # 市场情绪分析师
+  sentiment_analyst:
+    name: "陈情绪"
+    model: "your-model-name"
+    api_key: "your-api-key"
+    base_url: "your-base-url"
+    temperature: 0.8  # 较高的创造性，更好地理解情绪
+    max_tokens: 2000
+    
+  # 风险管理师
+  risk_manager:
+    name: "刘风控"
+    model: "your-model-name"
+    api_key: "your-api-key"
+    base_url: "your-base-url"
+    temperature: 0.5  # 中等创造性，平衡风险评估
+    max_tokens: 2000
+
+# 辩论设置
+debate:
+  voting_time_limit: 60  # 投票时间限制（秒）
+  consensus_threshold: 0.6  # 共识阈值
+
+# 工具配置
+tools_config:
+  enable_all: true
+  timeout: 30
+  retry_count: 3
+
+# 日志配置
+logging:
+  level: "INFO"
+  enable_tool_logging: true
+  enable_conversation_logging: true
+  log_file: "logs/agent_team.log"
+
+# 界面设置
+ui:
+  title: "📊 A-Scope Research - 金融智能体团队"
+  subtitle: "基于MCP的中国A股市场分析系统"
+  theme: "light"
+  language: "zh-CN"
+  port: 8501  # Streamlit前端端口
+  host: "localhost"
+  auto_scroll: true  # 自动滚动
+  show_timestamps: true  # 显示时间戳
+  show_tool_calls: true  # 显示工具调用
+  
+# 支持的模型服务商配置示例
+# 取消注释并修改相应配置来使用不同的模型服务商
+
+# OpenAI 官方
+# base_url: "https://api.openai.com/v1"
+# models: ["gpt-3.5-turbo", "gpt-4", "gpt-4-turbo"]
+
+# 智谱GLM
+# base_url: "https://open.bigmodel.cn/api/paas/v4/"
+# models: ["glm-4", "glm-3-turbo"]
+
+# 通义千问
+# base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+# models: ["qwen-turbo", "qwen-plus", "qwen-max"]
+
+# 月之暗面
+# base_url: "https://api.moonshot.cn/v1"
+# models: ["moonshot-v1-8k", "moonshot-v1-32k", "moonshot-v1-128k"]
+
+# DeepSeek
+# base_url: "https://api.deepseek.com/v1"
+# models: ["deepseek-chat", "deepseek-coder"]
+
+# 本地模型 (如 Ollama)
+# base_url: "http://localhost:11434/v1"
+# models: ["llama2", "codellama", "mistral"]
